@@ -24,7 +24,7 @@ const ContactForm = ({
     if (name === 'avatar') {
       setContact((prevState) => ({
         ...prevState,
-        avatar: URL.createObjectURL(e.target.files[0]),
+        avatar: e.target.files[0],
       }))
     } else {
       setContact((prevState) => ({ ...prevState, [name]: value }))
@@ -76,16 +76,23 @@ const ContactForm = ({
         />
       </label>
 
-      <label className="contact-form-avatar">
-        Choose Avatar
-        <input
-          className="visually-hidden"
-          type="file"
-          name="avatar"
-          accept="image/jpeg, image/png"
-          onChange={handleChange}
-        />
-      </label>
+      <div className="contact-form-avatar-container">
+        <label className="contact-form-avatar">
+          Choose Avatar
+          <input
+            className="visually-hidden"
+            type="file"
+            name="avatar"
+            accept="image/jpeg, image/png"
+            onChange={handleChange}
+          />
+        </label>
+        {contact.avatar && (
+          <span className="contact-form-avatar-name">
+            {contact.avatar.name}
+          </span>
+        )}
+      </div>
 
       {errorMessage && (
         <small className="contact-form-error-message">{errorMessage}</small>

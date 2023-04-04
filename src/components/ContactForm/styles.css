@@ -19,6 +19,10 @@
     font-weight: 700;
 }
 
+.contact-form-avatar-container {
+    margin-bottom: 24px;
+}
+
 .contact-form-avatar {
     padding: 4px 8px;
     font-size: 14px;
@@ -35,6 +39,11 @@
 
 .contact-form-avatar:hover {
     background-color: var(--primary-color-dark);
+}
+
+.contact-form-avatar-name {
+    font-size: 12px;
+    margin-left: 12px;
 }
 
 .contact-form-error-message {

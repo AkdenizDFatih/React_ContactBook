@@ -42,7 +42,9 @@ const Contact = ({ data, setContacts }) => {
     if (valid) {
       setContacts((prevState) =>
         prevState.map((item) => {
-          return item.id === contact.id ? contact : item
+          return item.id === contact.id
+            ? { ...contact, avatar: URL.createObjectURL(contact.avatar) }
+            : item
         })
       )
       setErrorMessage('')

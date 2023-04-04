@@ -17,7 +17,14 @@ const AddContact = ({ setContacts }) => {
     e.preventDefault()
     const valid = validateContactInputs(contact)
     if (valid) {
-      setContacts((prevState) => [...prevState, { ...contact, id: uuidv4() }])
+      setContacts((prevState) => [
+        ...prevState,
+        {
+          ...contact,
+          id: uuidv4(),
+          avatar: URL.createObjectURL(contact.avatar),
+        },
+      ])
       setErrorMessage('')
       toggleAddForm()
     } else {

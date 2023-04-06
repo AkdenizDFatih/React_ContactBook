@@ -1,20 +1,20 @@
 .add-contact-button {
-    color: var(--primary-color-dark);
-    background-color: white;
-    border: solid 3px var(--primary-color-dark);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 32px;
-    margin-left: auto;
-    margin-right: 16px;
+  color: var(--primary-color-dark);
+  background-color: white;
+  border: solid 3px var(--primary-color-dark);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+  margin-left: auto;
+  margin-right: 16px;
 }
 
 .add-contact-button:hover {
-    background-color: aliceblue;
+  background-color: aliceblue;
 }

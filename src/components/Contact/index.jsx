@@ -42,15 +42,14 @@ const Contact = ({ data, setContacts }) => {
     if (valid) {
       setContacts((prevState) =>
         prevState.map((item) => {
-          return item.id === contact.id 
-            ? 
-            // check whether the value of the avatar changed. If yes, create new URL object and add it to the contact instance. 
-            contact.avatar !== item.avatar 
-              ?
-              { ...contact, avatar: URL.createObjectURL(contact.avatar) }
-              : 
-              { ...contact }
-            : item
+          if(item.id === contact.id ){
+            // check whether the value of the avatar changed. If yes, create new URL object and add it to the contact
+            return (contact.avatar !== item.avatar ?
+              { ...contact, avatar: URL.createObjectURL(contact.avatar)} : 
+              { ...contact })
+          } else {
+            return item
+          }
         })
       )
       setErrorMessage('')

@@ -1,6 +1,6 @@
 export const validateContactInputs = (contact, intitalData) => {
   return Object.entries(contact).every(([key, value]) => {
-    // check wether the value change with the input or there is no initial data
+    // check wether the value change with the input or there is no initial data. In no additions were identified, return the same value. 
     if (!intitalData || value !==intitalData[key]) {
       if (key === 'avatar') {
         return value instanceof File

@@ -38,12 +38,18 @@ const Contact = ({ data, setContacts }) => {
 
   const handleSubmitEdit = (e, contact) => {
     e.preventDefault()
-    const valid = validateContactInputs(contact)
+    const valid = validateContactInputs(contact, data)
     if (valid) {
       setContacts((prevState) =>
         prevState.map((item) => {
-          return item.id === contact.id
-            ? { ...contact, avatar: URL.createObjectURL(contact.avatar) }
+          return item.id === contact.id 
+            ? 
+            // check whether the value of the avatar changed. If yes, create new URL object and add it to the contact instance. 
+            contact.avatar !== item.avatar 
+              ?
+              { ...contact, avatar: URL.createObjectURL(contact.avatar) }
+              : 
+              { ...contact }
             : item
         })
       )
